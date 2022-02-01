@@ -85,10 +85,21 @@ class _MyHomePageState extends State<MyHomePage> {
               String bmiString = bmi.toStringAsFixed(2);
               print(bmiString);
 
+              String getResult() {
+                if (bmi >= 25) {
+                  return 'Overweight';
+                } else if (bmi > 18.5) {
+                  return 'Healthy';
+                } else {
+                  return 'Underweight';
+                }
+              }
+
 
               showDialog(context: context, builder: (BuildContext context ) {
                 return AlertDialog(
-                  title: Text('Your Bmi is $bmiString', style: TextStyle(fontSize: 25)
+                  title: Text('Your Bmi is $bmiString \n' +getResult(), style: TextStyle(fontSize: 25)
+
                    ),
 
 
